@@ -78,7 +78,8 @@ router.post('/', async (req, res) => {
       await ProductTag.bulkCreate(productTagIdArr);
     }
 
-    res.status(201).json(newProduct);
+    // Return success message to the client
+    res.status(201).json({ message: 'Product successfully created' });
   } catch (err) {
     res.status(400).json(err);
   }
@@ -123,7 +124,8 @@ router.put('/:id', async (req, res) => {
       ]);
     }
 
-    res.status(200).json(updatedProduct);
+    // Return success message to the client
+    res.status(200).json({ message: 'Product edited successfully' });
   } catch (err) {
     res.status(400).json(err);
   }
